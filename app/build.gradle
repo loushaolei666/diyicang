@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+    defaultConfig {
+        applicationId "com.example.mydefenxiang"
+        minSdkVersion 22
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //加载网络图片
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+//动态授权依赖
+    implementation 'com.github.dfqin:grantor:2.5'
+//Smart刷新/加载
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
+//侧滑菜单/TabLayout
+    implementation 'com.android.support:design:29.0.0'
+//banner依赖
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'   //OKHttp3
+//OkHttp拦截器
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+
+//rxjava+retrofit
+//retrofit依赖
+    implementation "com.squareup.retrofit2:retrofit:2.5.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.5.0"
+    implementation "com.squareup.retrofit2:converter-scalars:2.0.1"
+    implementation "com.squareup.okhttp3:okhttp:3.12.1"
+    implementation "io.reactivex.rxjava2:rxjava:2.1.3" // 必要rxjava2依赖
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1" // 必要rxandrroid依赖，切线程时需要用到
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0' // 必要依赖，和Rxjava和Retrofit结合必须用到，
+
+
+
+    // 友盟基础组件库（所有友盟业务SDK都依赖基础组件库）
+// OAID目前为目前国内市场主流的Android Q设备标识，可根据需要选择。
+    implementation "com.umeng.umsdk:common:9.1.0" //（必选）
+    implementation "com.umeng.umsdk:asms:1.1.3" // asms包依赖(必选)
+    implementation "com.umeng.umsdk:crash:0.0.4" // native crash包依赖(必选)
+
+
+
+
+
+}
